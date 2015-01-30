@@ -1,0 +1,8 @@
+node_modules/
+.pid
+server
+bindata.go
+static/bundle.js
+src/
+pkg/
+bin/

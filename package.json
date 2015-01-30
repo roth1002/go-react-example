@@ -1,0 +1,37 @@
+{
+  "name": "go-react-example",
+  "version": "0.0.0",
+  "description": "Example project to show how to render React app on Golang server-side",
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "harmony": true
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olebedev/go-react-example.git"
+  },
+  "author": "Oleg Lebedev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olebedev/go-react-example/issues"
+  },
+  "homepage": "https://github.com/olebedev/go-react-example",
+  "dependencies": {
+    "browserify": "^8.1.1",
+    "react": "^0.12.2",
+    "react-async": "^2.0.1",
+    "react-router-component": "^0.23.3",
+    "reactify": "^1.0.0",
+    "superagent": "^0.21.0"
+  }
+}
