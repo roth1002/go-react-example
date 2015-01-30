@@ -2,8 +2,8 @@ BIN      = $(GOPATH)/bin
 NODE_BIN = ./node_modules/.bin
 PID      = .pid
 GO_FILES = $(filter-out bindata.go, $(wildcard *.go))
-STATIC   = $(filter-out static/bundle.js, $(shell find static -type f))
-APP      = $(shell find app -type f)
+STATIC   = $(filter-out static/bundle.js, $(shell find static -type f || true))
+APP      = $(shell find app -type f || true) bundle.js
 BUNDLE   = static/bundle.js
 
 build: bindata.go
@@ -18,7 +18,7 @@ kill:
 bindata.go: $(STATIC) $(BUNDLE)
 	$(BIN)/go-bindata -pkg=main -prefix=static -o=$@ static/...
 
-$(BUNDLE): $(BUNDLE:static%=app%)
+$(BUNDLE): $(BUNDLE:static/%=%)
 	@mkdir -p $(@D)
 	$(NODE_BIN)/browserify -e $< > $@
 
