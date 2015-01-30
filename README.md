@@ -11,7 +11,7 @@ It's very similar to [andreypopp/react-quickstart](https://github.com/andreypopp
 
 
 ## Benefits 
-First of all and most important, rendering is **fully synchronous**. There is no need to use react-async. Because on the server side the code executes in synchronous mode. This is duktape specific. Also, there is a binding between superagent javascript package and golang server side function. That means that you do http request and it is processed by golang function. As a consequence, there is no need to do a http request from the server to the same. Now it works between your react application and server side application directly. And it is possible to process requests with user session as well.
+First of all and most important, rendering is **fully synchronous**. There is no need to use react-async. Because on the server side the code executes in synchronous mode. This is duktape specific. Also, there is a binding between superagent javascript package and golang server side function. That means that you do http request and it is processed by golang function. As a consequence, there is no need to do real http request from the server to the same. Now it works between your react application and server side application directly. And it is possible to process requests with user session as well.
 
 Also this project allows you to embed all static files. So, you have one executable file of you application. Cross compiling is also avilable with this approach, but this is not the point.
 
