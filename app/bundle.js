@@ -96,8 +96,7 @@ var App = React.createClass({
         <head>
           <link rel="stylesheet" href="/static/css/style.css" />
           <script src="/static/bundle.js" />
-          <script src="/_reload/reload.js" />
-          <title>Go boilerplate</title>
+          <title>Go React Example</title>
         </head>
         <Pages className="App" path={this.props.path}>
           <Page path="/" handler={MainPage} />
@@ -113,6 +112,6 @@ module.exports = global.App = App;
 
 if (typeof window !== 'undefined') {
   window.onload = function() {
-    React.render(App(), document);
+    React.render(<App />, document);
   }
 }
