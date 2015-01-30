@@ -29,11 +29,6 @@ var api = __api__{}
 
 func (api __api__) bind(r *gin.RouterGroup) {
 	r.GET("/users/:username", api.username)
-	r.GET("/config", api.config)
-}
-
-func (_ __api__) config(c *gin.Context) {
-	c.JSON(200, conf.Root)
 }
 
 func upperFirst(s string) string {
@@ -63,7 +58,7 @@ func main() {
 		Dir:         "/static",
 	}))
 
-	// Attach api, see: api.go.
+	// Attach api
 	api.bind(router.Group(conf.UString("api.prefix")))
 
 	// For all other requests, see: react.go.
