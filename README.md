@@ -18,12 +18,10 @@ Also this project allows you to embed all static files. So, you have one executa
 ## Install
 
 ```
-$ # clone the repo
 $ git clone https://github.com/olebedev/go-react-example && cd $_
-$ # fetch dependencies
 $ go get ./...
-$ # install go-bindata to embed static files
 $ go get -u github.com/jteeuwen/go-bindata/...
+$ npm i
 ```
 
 Now you ready to start.
