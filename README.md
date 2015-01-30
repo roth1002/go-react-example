@@ -3,11 +3,11 @@ This is an example of project which shows how to render React app on Golang serv
 It's very similar to [andreypopp/react-quickstart](https://github.com/andreypopp/react-quickstart)(please see it first) project, but with some Go and other benefits.  
 
 ## What it contains?
-- [go-duktape]() bindings for a thin, embeddable javascript engine;
-- [gin]() framework;
-- [staticbin]() middleware for gin, to serve embedded static files;
-- [config]() package, to define config, parse flags and environment variables
-- [optional] live code reloading, by `fswatch`, avilable for OSX and linux.
+- [go-duktape](https://github.com/olebedev/go-duktape) bindings for a thin, embeddable javascript engine
+- [gin](https://github.com/gin-gonic/gin) framework
+- [staticbin](https://github.com/olebedev/staticbin) middleware for gin, to serve embedded static files
+- [config](https://github.com/olebedev/config) package, to define config, parse flags and environment variables
+- [optional] live code reloading, by `fswatch`, avilable for OSX and linux
 
 
 ## Benefits 
