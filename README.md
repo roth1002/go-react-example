@@ -1,4 +1,4 @@
-## go-react-example
+# go-react-example
 This is an example of project which shows how to render React app on Golang server-side.  
 It's very similar to [andreypopp/react-quickstart](https://github.com/andreypopp/react-quickstart)(please see it first) project, but with some Go and other benefits.  
 
