@@ -43,18 +43,18 @@ loop:
 
 // Loads bundle.js to context
 func newDukContext(engine *gin.Engine) *duktape.Context {
-	vm := duktape.NewContext()
-	if vm.PevalString(`var self = {}, console = {log:print,warn:print,error:print,info:print}`) == 1 {
-		panic(vm.SafeToString(-1))
+	vm := duktape.Default()
+	if err := vm.PevalString(`var self = {}, console = {log:print,warn:print,error:print,info:print}`); err != nil {
+		panic(err.(*duktape.Error).Message)
 	}
 	app, err := Asset("bundle.js")
 	panicIf(err)
-	if vm.PevalString(string(app)) == 1 {
-		panic(vm.SafeToString(-1))
+	if err := vm.PevalString(string(app)); err != nil {
+		panic(err.(*duktape.Error).Message)
 	}
-	panicIf(vm.PushGoFunc("__request__", request(engine)))
-	if vm.PevalString(superagentBinding) == 1 {
-		panic(vm.SafeToString(-1))
+	panicIf(vm.PushGlobalGoFunction("__request__", request(engine)))
+	if err := vm.PevalString(superagentBinding); err != nil {
+		panic(err.(*duktape.Error).Message)
 	}
 
 	// test case for superagent
