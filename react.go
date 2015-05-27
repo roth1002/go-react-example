@@ -43,7 +43,7 @@ loop:
 
 // Loads bundle.js to context
 func newDukContext(engine *gin.Engine) *duktape.Context {
-	vm := duktape.Default()
+	vm := duktape.New()
 	if err := vm.PevalString(`var self = {}, console = {log:print,warn:print,error:print,info:print}`); err != nil {
 		panic(err.(*duktape.Error).Message)
 	}
