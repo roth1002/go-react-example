@@ -52,7 +52,8 @@ func newDukContext(engine *gin.Engine) *duktape.Context {
 	if err := vm.PevalString(string(app)); err != nil {
 		panic(err.(*duktape.Error).Message)
 	}
-	panicIf(vm.PushGlobalGoFunction("__request__", request(engine)))
+	_, err = vm.PushGlobalGoFunction("__request__", request(engine))
+	panicIf(err)
 	if err := vm.PevalString(superagentBinding); err != nil {
 		panic(err.(*duktape.Error).Message)
 	}
