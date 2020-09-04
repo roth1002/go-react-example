@@ -28,7 +28,7 @@
   "homepage": "https://github.com/olebedev/go-react-example",
   "dependencies": {
     "browserify": "^8.1.1",
-    "react": "^0.12.2",
+    "react": "^16.13.1",
     "react-async": "*",
     "react-router-component": "*",
     "reactify": "^1.0.0",
